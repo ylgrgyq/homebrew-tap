@@ -5,16 +5,16 @@
 class Wsdog < Formula
   desc "A command line tool to debug and explore WebSocket."
   homepage "https://github.com/ylgrgyq/wsdog"
-  version "1.0.2"
+  version "1.0.3"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/ylgrgyq/wsdog/releases/download/v1.0.2/wsdog_Darwin_x86_64.tar.gz"
-    sha256 "54d96523a815471a251b017add43a0e0546b9bdabe7bdce2bf3454a09c916ea9"
+    url "https://github.com/ylgrgyq/wsdog/releases/download/v1.0.3/wsdog_Darwin_x86_64.tar.gz"
+    sha256 "f1c62a966e8a34545a9b44b9b0797b7b1986a0ccee09713840d83c23a2528049"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/ylgrgyq/wsdog/releases/download/v1.0.2/wsdog_Linux_x86_64.tar.gz"
-    sha256 "3786817d8d759de52de0ac03e472360721715c5efff7da821debfa84d4558152"
+    url "https://github.com/ylgrgyq/wsdog/releases/download/v1.0.3/wsdog_Linux_x86_64.tar.gz"
+    sha256 "dce769295846f6c45a20b8b6d80608dc68f9c36e66fde4a5326899db0609c5d3"
   end
 
   def install
