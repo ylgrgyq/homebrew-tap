@@ -5,20 +5,28 @@
 class Wsdog < Formula
   desc "A command line tool to debug and explore WebSocket."
   homepage "https://github.com/ylgrgyq/wsdog"
-  version "1.0.3"
-  bottle :unneeded
+  version "1.0.4"
 
-  if OS.mac?
-    url "https://github.com/ylgrgyq/wsdog/releases/download/v1.0.3/wsdog_Darwin_x86_64.tar.gz"
-    sha256 "f1c62a966e8a34545a9b44b9b0797b7b1986a0ccee09713840d83c23a2528049"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/ylgrgyq/wsdog/releases/download/v1.0.3/wsdog_Linux_x86_64.tar.gz"
-    sha256 "dce769295846f6c45a20b8b6d80608dc68f9c36e66fde4a5326899db0609c5d3"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/ylgrgyq/wsdog/releases/download/v1.0.4/wsdog_Darwin_x86_64.tar.gz"
+      sha256 "7d7619a39a4a1becc5e9bfca23fd849ebe7c39abf03c0604bde9b7e035ae2505"
+
+      def install
+        bin.install "wsdog"
+      end
+    end
   end
 
-  def install
-    bin.install "wsdog"
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/ylgrgyq/wsdog/releases/download/v1.0.4/wsdog_Linux_x86_64.tar.gz"
+      sha256 "595499fa6b2cb2d7472d79f4175fdb1c81afe7ccd0f64fece14f0fda2ba81829"
+
+      def install
+        bin.install "wsdog"
+      end
+    end
   end
 
   test do
